@@ -17,4 +17,33 @@ export class ListadoClientesComponent implements OnInit {
   ngOnInit() {
     this.clientes = this.clientesService.getClientes();
   }
+
+  ordenarA(){
+    this.clientes.sort((a,b)=>{
+      const nombreA=a.nombre.toLowerCase
+      const nombreb=b.nombre.toLowerCase
+      if(a.nombre < b.nombre){
+        return -1
+      }
+      if(a.nombre > b.nombre){
+        return 1;
+      }
+      return 0
+    }
+  
+     )}
+     ordenD(){
+      this.clientes.sort((a, b)=>{
+        if(a.nombre < b.nombre){
+          return 1
+        }
+        if(a.nombre > b.nombre){
+          return -1;
+        }
+      return 0
+    
+      })
+     }
+  
+
 }

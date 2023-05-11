@@ -9,4 +9,9 @@
       <span>{{cliente.direccion}}</span>
       <span>{{cliente.grupo}}</span>
     </article>
+    <button *ngIf="clientes.length" (click)="ordenarA()"> ordenar acendente</button>
+    <br/>
+    
+    <button *ngIf="clientes.length" (click)="ordenD()"> ordenar Desendente</button>
+
   </div>
