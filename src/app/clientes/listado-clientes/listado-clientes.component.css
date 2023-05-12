@@ -3,10 +3,40 @@ article {
     border-bottom: 1px solid #ddd;
     padding: 10px;
     font-size: 0.9em;
+    
+}
+
+.TituloLista{
+    display: inline-block;
+    margin: 10px;
 }
 
 span {
     display: inline-block;
     width: 22%;
     margin-right: 2%;
+}
+
+.ordenD {
+
+   
+    display: inline-flex;
+    background: rgba(122, 137, 160, 0.973);
+    padding: 2px;
+    border-radius: 8px;
+
+}
+.ordenA {
+    
+    display: inline-flex;
+    background: rgba(122, 137, 160, 0.973);
+    padding: 2px;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.botonEliminar{
+    background-color: darkred;
+    border-radius: 25px;
+    font-weight: bold;
 }

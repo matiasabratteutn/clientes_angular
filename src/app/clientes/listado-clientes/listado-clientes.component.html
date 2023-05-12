@@ -1,6 +1,10 @@
-<h2>
+<h2 class="TituloLista">
     Listado clientes
   </h2>
+  <div class="botonesOrden">
+    <button class="ordenA" *ngIf="clientes.length" (click)="ordenarA()" >Ordenar Ascendente</button>
+    <button class="ordenD"*ngIf="clientes.length" (click)="ordenD()"> ordenar Desendente</button>
+  </div>
   <div *ngIf="! clientes.length">No hay clientes por el momento</div>
   <div>
     <article *ngFor="let cliente of clientes">
@@ -8,10 +12,11 @@
       <span>{{cliente.cuit}}</span>
       <span>{{cliente.direccion}}</span>
       <span>{{cliente.grupo}}</span>
+      <button class="botonEliminar" (click)="this.borrarCliente(this.cliente)">X</button>
     </article>
-    <button *ngIf="clientes.length" (click)="ordenarA()"> ordenar acendente</button>
+    
     <br/>
     
-    <button *ngIf="clientes.length" (click)="ordenD()"> ordenar Desendente</button>
+    
 
   </div>

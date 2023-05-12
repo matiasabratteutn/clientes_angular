@@ -18,6 +18,9 @@ export class ListadoClientesComponent implements OnInit {
     this.clientes = this.clientesService.getClientes();
   }
 
+  borrarCliente(cliente: any){
+    this.clientes.splice(cliente, 1);
+  }
   ordenarA(){
     this.clientes.sort((a,b)=>{
       const nombreA=a.nombre.toLowerCase

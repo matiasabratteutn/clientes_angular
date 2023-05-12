@@ -1,24 +1,28 @@
 <p>APP alta Cliente</p>
-<h2>Alta cliente</h2>
+<h2 class="titulo">Alta cliente</h2>
+<div class="cajaFormulario">
 <p>
   <span>Nombre:</span>
-  <input type="text" [(ngModel)]="cliente.nombre">
+  <input type="text" class="cajaDatosTomados" [(ngModel)]="cliente.nombre">
 </p>
 
 <p>
   <span>CUIT:</span>
-  <input type="text" [(ngModel)]="cliente.cuit">
+  <input type="text" class="cajaDatosTomados" [(ngModel)]="cliente.cuit">
 </p>
 <p>
   <span>Dirección:</span>
-  <input type="text" [(ngModel)]="cliente.direccion">
+  <input type="text" class="cajaDatosTomados" [(ngModel)]="cliente.direccion">
 </p>
 <p>
   <span>Grupo:</span>
-  <select [(ngModel)]="cliente.grupo">
+  <select class="cajaDatosTomados" [(ngModel)]="cliente.grupo">
     <option *ngFor="let grupo of grupos" value="{{grupo.id}}">{{grupo.nombre}}</option>
   </select>
+  
 </p>
+<button class="botonGuardar" (click)="this.nuevoCliente()">Guardar</button>
+</div>  
 <p>
-  <button (click)="this.nuevoCliente()">Guardar</button>
+  
 </p>

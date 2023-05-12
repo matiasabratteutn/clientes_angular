@@ -1,0 +1,30 @@
+.titulo{
+    text-align: center;
+}
+.cajaFormulario{
+    display:flex;
+    text-align: justify;
+    background-color:darksalmon;
+    width: max-content;
+    height: max-content;
+    padding: 2px;
+    margin: auto;
+    border-radius: 20px;
+    border-style: solid;
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+.cajaDatosTomados{
+    background-color: darkgrey;
+}
+.botonGuardar{
+
+    margin: 15px;
+    display: flex;
+    background: rgba(122, 137, 160, 0.973);
+    padding: 2px;
+    border-radius: 8px;
+    
+}
