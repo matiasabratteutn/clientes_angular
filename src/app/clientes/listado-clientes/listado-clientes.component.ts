@@ -11,31 +11,33 @@ export class ListadoClientesComponent implements OnInit {
   //Estas dos se conocen como propiedades
   clientes!: Cliente[];
   grupos: Grupo[] = [];
-  public buscarCliente: string='';
+  public buscarCliente: any;
+  public encontrado: any;
+
   
   constructor(private clientesService: ClientesService) { }//A esto se lo llama inyección de dependencias
 
   ngOnInit() {
     this.clientes = this.clientesService.getClientes();
   }
-  
 
   botonBuscar(){
     
     const x = this.clientes.find((elemento) => {
-      let noEncontrado = 'No se encontro al cliente';
-      if(elemento.nombre === this.buscarCliente){
-
-        alert(elemento.nombre);
+      
+        if(elemento.nombre === this.buscarCliente){
+          this.encontrado = this.clientes.indexOf(elemento);
+          this.buscarCliente = this.clientes[this.encontrado];
+          alert('Id del cliente: ' + this.encontrado); 
+        }
       }
-      else{
-        
-        alert(noEncontrado);
-      }
-    }
+      
     )
+    
   }
-
+  clienteEncontrado(){
+    return this.clientes[this.encontrado];
+  }
 
   borrarCliente(cliente: any){
     this.clientes.splice(cliente, 1);

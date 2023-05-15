@@ -21,7 +21,7 @@
       <article>
         <input type="text" [(ngModel)]="buscarCliente">
         <button class="botonBuscar" name='result' (click)="botonBuscar()">Buscar</button>
-        
+        <p>{{this.clientes[encontrado] | json}}</p>
       </article>
   
     </div>
