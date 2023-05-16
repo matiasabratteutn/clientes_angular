@@ -13,7 +13,7 @@ export class ListadoClientesComponent implements OnInit {
   grupos: Grupo[] = [];
   public buscarCliente: any;
   public encontrado: any;
-
+  public clienteBuscado: string='';
   
   constructor(private clientesService: ClientesService) { }//A esto se lo llama inyección de dependencias
 
@@ -22,13 +22,12 @@ export class ListadoClientesComponent implements OnInit {
   }
 
   botonBuscar(){
-    
+    this.buscarCliente = this.clienteBuscado;
     const x = this.clientes.find((elemento) => {
       
         if(elemento.nombre === this.buscarCliente){
           this.encontrado = this.clientes.indexOf(elemento);
-          this.buscarCliente = this.clientes[this.encontrado];
-          alert('Id del cliente: ' + this.encontrado); 
+          this.buscarCliente = this.clientes[this.encontrado]; 
         }
       }
       

@@ -19,9 +19,16 @@
   
     <div class="buscar">
       <article>
-        <input type="text" [(ngModel)]="buscarCliente">
+        <input type="text" [(ngModel)]="clienteBuscado">
         <button class="botonBuscar" name='result' (click)="botonBuscar()">Buscar</button>
-        <p>{{this.clientes[encontrado] | json}}</p>
+        <br>
+      </article>
+      <h2>Cliente buscado: </h2>
+      <article *ngIf='encontrado >= 0'>
+        <span>{{clientes[encontrado].nombre}}</span>
+        <span>{{clientes[encontrado].cuit}}</span>
+        <span>{{clientes[encontrado].direccion}}</span>
+        <span>{{clientes[encontrado].grupo}}</span>
       </article>
   
     </div>
