@@ -1,13 +1,21 @@
 <h2 class="TituloLista">
     Listado clientes
   </h2>
+  <!-- <select class="cajaDatosTomados" [(ngModel)]="grupos">
+    <option *ngFor="let grupo of grupos" value="{{grupo.id}}">{{grupo.nombre}}</option>
+  </select> -->
   <div class="botonesOrden">
     <button class="ordenA" *ngIf="clientes.length" (click)="ordenarA()" >Ordenar Ascendente</button>
     <button class="ordenD"*ngIf="clientes.length" (click)="ordenD()"> ordenar Desendente</button>
   </div>
-  
   <div *ngIf="! clientes.length">No hay clientes por el momento</div>
   <div>
+    <article>
+      <span class="a" type="button" (click)="ordenarSegun()"><b>Nombre</b></span>
+      <span><b>Cuit</b></span>
+      <span><b>Direccion</b></span>
+      <span><b>Grupo</b></span>
+    </article>
     <article *ngFor="let cliente of clientes">
       <span>{{cliente.nombre}}</span>
       <span>{{cliente.cuit}}</span>
@@ -16,7 +24,6 @@
       <button class="botonEliminar" (click)="this.borrarCliente(this.cliente)">X</button>
     </article>
     <br/>
-  
     <div class="buscar">
       <article>
         <input type="text" [(ngModel)]="clienteBuscado">
@@ -30,7 +37,9 @@
         <span>{{clientes[encontrado].direccion}}</span>
         <span>{{clientes[encontrado].grupo}}</span>
       </article>
-  
+
+      <br>
+      
     </div>
 
   </div>

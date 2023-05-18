@@ -14,7 +14,10 @@ export class ListadoClientesComponent implements OnInit {
   public buscarCliente: any;
   public encontrado: any;
   public clienteBuscado: string='';
-  
+  public grupoBuscado: any;
+  public grupoIndex: any;
+  public ascendente: boolean=true;
+
   constructor(private clientesService: ClientesService) { }//A esto se lo llama inyección de dependencias
 
   ngOnInit() {
@@ -29,10 +32,7 @@ export class ListadoClientesComponent implements OnInit {
           this.encontrado = this.clientes.indexOf(elemento);
           this.buscarCliente = this.clientes[this.encontrado]; 
         }
-      }
-      
-    )
-    
+      })
   }
   clienteEncontrado(){
     return this.clientes[this.encontrado];
@@ -51,21 +51,51 @@ export class ListadoClientesComponent implements OnInit {
       if(a.nombre > b.nombre){
         return 1;
       }
-      return 0
+      return 0;
     }
   
      )}
-     ordenD(){
-      this.clientes.sort((a, b)=>{
+  ordenD(){
+    this.clientes.sort((a, b)=>{
+      if(a.nombre < b.nombre){
+        return 1;
+      };
+      if(a.nombre > b.nombre){
+        return -1;
+      };
+        return 0;
+      });
+  }
+
+  ordenarSegun(){
+    if(this.ascendente == true){
+      this.ascendente = false;
+      this.clientes.sort((a,b)=>{
+        const nombreA=a.nombre.toLowerCase
+        const nombreb=b.nombre.toLowerCase
         if(a.nombre < b.nombre){
-          return 1
+          return -1
         }
         if(a.nombre > b.nombre){
-          return -1;
+          return 1;
         }
-      return 0
-      })
+        return 0;
+    }
+    )} else if(this.ascendente == false){
+      this.ascendente = true;
+      this.clientes.sort((a, b)=>{
+        if(a.nombre < b.nombre){
+          return 1;
+        };
+        if(a.nombre > b.nombre){
+          return -1;
+        };
+          return 0;
+        });
+    }
   }
   
 
-}
+
+  };
+
