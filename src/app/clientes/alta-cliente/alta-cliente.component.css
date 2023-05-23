@@ -14,7 +14,10 @@
     font-weight: bold;
     font-style: Arial;
 }
-
+.fotoACargar{
+    height: 100px;
+    width: 100px;
+}
 .cajaDatosTomados{
     background-color: darkgrey;
 }

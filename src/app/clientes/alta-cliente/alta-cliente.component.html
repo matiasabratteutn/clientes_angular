@@ -14,6 +14,15 @@
   <span>Dirección:</span>
   <input type="text" class="cajaDatosTomados" [(ngModel)]="cliente.direccion">
 </p>
+
+<p>
+  <span>Foto de perfil:</span>
+  <input type="file" (change)="capturarArchivo($event)">
+</p>
+<div class="fotoACargar" *ngIf="cliente.fotoPerfil">
+  <img class="fotoACargar" [src]="cliente.fotoPerfil" alt="Foto de perfil">
+</div>
+
 <p>
   <span>Grupo:</span>
   <select class="cajaDatosTomados" [(ngModel)]="cliente.grupo">

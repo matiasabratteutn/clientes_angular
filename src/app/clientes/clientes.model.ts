@@ -4,6 +4,7 @@ export interface Cliente {
     cuit: string;
     direccion: string;
     grupo: number;
+    fotoPerfil: string;
   }
   
   export interface Grupo {

@@ -48,7 +48,8 @@ export class ClientesService {
       nombre: '',
       cuit: '',
       direccion: '',
-      grupo: 0
+      grupo: 0,
+      fotoPerfil:''
     };
   }
 }

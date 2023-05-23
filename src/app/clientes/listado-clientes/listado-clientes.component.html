@@ -11,12 +11,14 @@
   <div *ngIf="! clientes.length">No hay clientes por el momento</div>
   <div>
     <article>
+      <span><b>Avatar</b></span>
       <span class="a" type="button" (click)="ordenarSegun()"><b>Nombre</b></span>
       <span><b>Cuit</b></span>
       <span><b>Direccion</b></span>
       <span><b>Grupo</b></span>
     </article>
     <article *ngFor="let cliente of clientes" class="EditarCliente" contenteditable="false">
+        <span><img class="fotousuario" [src]="cliente.fotoPerfil" alt="Foto de perfil"></span>
         <span>{{cliente.nombre}}</span>
         <span>{{cliente.cuit}}</span>
         <span>{{cliente.direccion}}</span>
