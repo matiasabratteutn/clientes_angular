@@ -17,6 +17,7 @@ export class ListadoClientesComponent implements OnInit {
   public grupoBuscado: any;
   public grupoIndex: any;
   public ascendente: boolean=true;
+  public edit: boolean=false;
 
   constructor(private clientesService: ClientesService) { }//A esto se lo llama inyección de dependencias
 
@@ -94,7 +95,18 @@ export class ListadoClientesComponent implements OnInit {
         });
     }
   }
-  
+  guardarCliente(){
+    let editar = document.querySelector(".EditarCliente");
+    editar?.setAttribute("contenteditable","false");
+  }
+  editarCliente(){
+    let editar = document.querySelector(".EditarCliente");
+    
+    if(editar?.getAttribute("contenteditable")){
+      editar?.setAttribute("contenteditable","true");
+    }
+
+  }
 
 
   };
