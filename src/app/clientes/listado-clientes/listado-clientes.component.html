@@ -17,12 +17,10 @@
       <span><b>Grupo</b></span>
     </article>
     <article *ngFor="let cliente of clientes" class="EditarCliente" contenteditable="false">
-      
         <span>{{cliente.nombre}}</span>
         <span>{{cliente.cuit}}</span>
         <span>{{cliente.direccion}}</span>
         <span>{{cliente.grupo}}</span>
-      
       <button class="botonEliminar" (click)="this.borrarCliente(this.cliente)">X</button>
       <button class="botonEditar" contenteditable="false" (click)="this.editarCliente()">Editar</button>
       <button class="botonEditar" contenteditable="false" (click)="this.guardarCliente()">Guardar</button>
