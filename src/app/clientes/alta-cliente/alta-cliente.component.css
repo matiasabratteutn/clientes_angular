@@ -12,7 +12,8 @@
     border-radius: 21px;
     border-style: solid;
     font-weight: bold;
-    font-style: italic;
+    font-style: false;
+  
 
 }
 
